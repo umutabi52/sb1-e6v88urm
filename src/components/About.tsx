@@ -8,7 +8,9 @@ const About: React.FC = () => {
     'Flexible Terminplanung',
     'Maßgeschneiderte Reinigungspläne',
     'Vollständig versichert',
-    'Kundenorientierter Service'
+    'Kundenorientierter Service',
+    'Zufriedenheitsgarantie',
+    'Günstig & Nachhaltig'
   ];
 
   return (

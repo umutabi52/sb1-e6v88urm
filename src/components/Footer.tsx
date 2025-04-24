@@ -47,6 +47,21 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#services" className="text-gray-400 hover:text-white transition-colors">Teppichreinigung</a>
               </li>
+               <li>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Baureinigung</a>
+              </li>
+               <li>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Hausreinigung</a>
+              </li>
+                <li>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Winterdienst</a>
+              </li>
+              <li>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Gartenservice</a>
+              </li>
+              <li>
+                <a href="#services" className="text-gray-400 hover:text-white transition-colors">Treppenhausreinigung</a>
+              </li>
             </ul>
           </div>
           

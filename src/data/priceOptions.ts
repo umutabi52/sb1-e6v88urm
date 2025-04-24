@@ -4,25 +4,25 @@ export const priceOptions: PriceOption[] = [
   {
     id: 'standard',
     name: 'Standard Reinigung',
-    basePrice: 35,
+    basePrice: 37,
     unit: 'pro Stunde',
   },
   {
     id: 'deep',
     name: 'Grundreinigung',
-    basePrice: 45,
+    basePrice: 48,
     unit: 'pro Stunde',
   },
   {
     id: 'window',
     name: 'Fensterreinigung',
-    basePrice: 8,
+    basePrice: 9.50,
     unit: 'pro Fenster',
   },
   {
     id: 'office',
     name: 'Büroreinigung',
-    basePrice: 30,
+    basePrice: 35,
     unit: 'pro Stunde',
   },
 ];

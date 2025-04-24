@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -43,14 +43,6 @@ const Hero: React.FC = () => {
               className="bg-white hover:bg-gray-100 text-blue-600 px-6 py-3 rounded-full flex items-center justify-center transition-colors text-lg font-medium"
             >
               Jetzt anrufen
-            </a>
-            <a 
-              href="/preisliste.zip" 
-              download
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full flex items-center justify-center transition-colors text-lg font-medium"
-            >
-              Preisliste herunterladen
-              <Download size={20} className="ml-2" />
             </a>
           </div>
           

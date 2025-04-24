@@ -1,6 +1,6 @@
 import React from 'react';
 import { services } from '../data/services';
-import { Home, Sparkles, CheckSquare, Truck, Briefcase, Layers } from 'lucide-react';
+import { Home, Sparkles, CheckSquare, Truck, Briefcase, Layers, Construction, Users, Snowflake, Flower2, Stars as Stairs } from 'lucide-react';
 
 const Services: React.FC = () => {
   // Map service icons to Lucide components
@@ -12,8 +12,22 @@ const Services: React.FC = () => {
       case 'Truck': return <Truck size={size} className="text-blue-600" />;
       case 'Briefcase': return <Briefcase size={size} className="text-blue-600" />;
       case 'Layers': return <Layers size={size} className="text-blue-600" />;
+      case 'Construction': return <Construction size={size} className="text-blue-600" />;
+      case 'Users': return <Users size={size} className="text-blue-600" />;
+      case 'Snowflake': return <Snowflake size={size} className="text-blue-600" />;
+      case 'Flower2': return <Flower2 size={size} className="text-blue-600" />;
+      case 'Stairs': return <Stairs size={size} className="text-blue-600" />;
       default: return <Home size={size} className="text-blue-600" />;
     }
+  };
+
+  const formatDescription = (description: string) => {
+    return description.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        {index < description.split('\n').length - 1 && <br />}
+      </React.Fragment>
+    ));
   };
 
   return (
@@ -37,13 +51,12 @@ const Services: React.FC = () => {
               </div>
               
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
+              <p className="text-gray-600 mb-6 flex-grow whitespace-pre-line">
+                {formatDescription(service.description)}
+              </p>
               
-              <div className="flex justify-between items-center mt-auto">
+              <div className="flex justify-end items-center mt-auto">
                 <span className="font-bold text-blue-600">{service.price}</span>
-                <button className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
-                  Mehr erfahren
-                </button>
               </div>
             </div>
           ))}
