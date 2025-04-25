@@ -1,20 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Send, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -32,13 +19,14 @@ const Contact: React.FC = () => {
               name="kontakt"
               method="POST"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              netlify-honeypot="bot-field"
               className="bg-white rounded-lg shadow-sm p-8"
             >
-              {/* Netlify verstecktes Feld */}
               <input type="hidden" name="form-name" value="kontakt" />
               <p className="hidden">
-                <label>Don’t fill this out: <input name="bot-field" /></label>
+                <label>
+                  Nicht ausfüllen: <input name="bot-field" />
+                </label>
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -48,10 +36,8 @@ const Contact: React.FC = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -61,10 +47,8 @@ const Contact: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -76,9 +60,7 @@ const Contact: React.FC = () => {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -87,10 +69,8 @@ const Contact: React.FC = () => {
                   <select
                     id="service"
                     name="service"
-                    value={formData.service}
-                    onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Bitte auswählen</option>
                     <option value="regular">Regelmäßige Reinigung</option>
@@ -109,11 +89,9 @@ const Contact: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -181,7 +159,6 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
