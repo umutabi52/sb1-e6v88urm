@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">ReinigungsGenie</h3>
             <p className="text-gray-400 mb-6">
-              Professionelle Reinigungsdienstleistungen für Privathaushalte und Unternehmen in Kiel und Umgebung.
+              Professionelle Reinigungsdienstleistungen für Privathaushalte und Unternehmen in Kiel und Umgebung. reinigungsservice, gebäudereinigung und büroreinigung 
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-800 hover:bg-blue-600 transition-colors p-2 rounded-full">
