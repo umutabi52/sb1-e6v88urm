@@ -15,13 +15,14 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
           <div className="lg:col-span-3">
-            <form
-              name="kontakt"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              className="bg-white rounded-lg shadow-sm p-8"
-            >
+  <form
+  name="kontakt"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  action="/thanks"
+  className="bg-white rounded-lg shadow-sm p-8"
+>
               <input type="hidden" name="form-name" value="kontakt" />
               <p className="hidden">
                 <label>
