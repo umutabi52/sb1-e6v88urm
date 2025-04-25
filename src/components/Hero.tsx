@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
               <ArrowRight size={20} className="ml-2" />
             </button>
             <a 
-              href="tel:+4915735996323" 
+              href="tel:+4915751527729" 
               className="bg-white hover:bg-gray-100 text-blue-600 px-6 py-3 rounded-full flex items-center justify-center transition-colors text-lg font-medium"
             >
               Jetzt anrufen
