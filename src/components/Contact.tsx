@@ -1,7 +1,24 @@
 import React from 'react';
 import { Send, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag_report_conversion: (url?: string) => void;
+  }
+}
+
 const Contact: React.FC = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Google Conversion Tracking auslösen
+    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+      window.gtag_report_conversion('/thanks');
+    } else {
+      // Fallback falls Tracking nicht verfügbar ist
+      window.location.href = '/thanks';
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -15,14 +32,15 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
           <div className="lg:col-span-3">
-  <form
-  name="kontakt"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
-  action="/thanks"
-  className="bg-white rounded-lg shadow-sm p-8"
->
+            <form
+              name="kontakt"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/thanks"
+              onSubmit={handleSubmit}
+              className="bg-white rounded-lg shadow-sm p-8"
+            >
               <input type="hidden" name="form-name" value="kontakt" />
               <p className="hidden">
                 <label>
