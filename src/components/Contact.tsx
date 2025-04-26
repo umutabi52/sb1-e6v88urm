@@ -8,29 +8,35 @@ declare global {
 }
 
 const Contact: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Google Conversion Tracking
-    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
-      window.gtag_report_conversion('/thanks');
-    }
+    try {
+      // Google Conversion Tracking
+      if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+        window.gtag_report_conversion();
+      }
 
-    // Manuelles Abschicken für Netlify
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    })
-      .then(() => {
-        window.location.href = "/thanks";
-      })
-      .catch((error) => {
-        alert("Fehler beim Senden des Formulars: " + error);
+      // Send form data to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Redirect to thanks page
+      window.location.href = '/thanks';
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Es gab einen Fehler beim Senden des Formulars. Bitte versuchen Sie es später erneut.');
+    }
   };
 
   return (
