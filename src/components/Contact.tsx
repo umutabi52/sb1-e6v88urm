@@ -53,19 +53,13 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
           <div className="lg:col-span-3">
             <form
-              name="kontakt"
+              name="contact"
               method="POST"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="bg-white rounded-lg shadow-sm p-8"
             >
-              <input type="hidden" name="form-name" value="kontakt" />
-              <p className="hidden">
-                <label>
-                  Nicht ausfüllen: <input name="bot-field" />
-                </label>
-              </p>
+              <input type="hidden" name="form-name" value="contact" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
