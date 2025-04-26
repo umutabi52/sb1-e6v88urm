@@ -8,6 +8,16 @@ declare global {
 }
 
 const Contact: React.FC = () => {
+  const whatsappMessage = encodeURIComponent(
+    "Hallo Reinigungsgenie-Team\n" +
+    "ich interessiere mich für eine Reinigung und möchte gerne ein unverbindliches Angebot anfragen.\n\n" +
+    "Die Reinigung betrifft:\n" +
+    "– Art der Reinigung: [z. B. Grundreinigung, Fensterreinigung, etc.]\n" +
+    "– Fläche/Größe/Zimmer: \n" +
+    "– Ort: \n\n" +
+    "Ich freue mich auf Ihre Rückmeldung. Vielen Dank im Voraus!"
+  );
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -42,7 +52,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <a
-        href="https://wa.me/4915751527729"
+        href={`https://wa.me/4915751527729?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2"
