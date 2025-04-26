@@ -10,13 +10,27 @@ declare global {
 const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Google Conversion Tracking auslösen
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Google Conversion Tracking
     if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
       window.gtag_report_conversion('/thanks');
-    } else {
-      // Fallback falls Tracking nicht verfügbar ist
-      window.location.href = '/thanks';
     }
+
+    // Manuelles Abschicken für Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => {
+        window.location.href = "/thanks";
+      })
+      .catch((error) => {
+        alert("Fehler beim Senden des Formulars: " + error);
+      });
   };
 
   return (
@@ -37,7 +51,6 @@ const Contact: React.FC = () => {
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/thanks"
               onSubmit={handleSubmit}
               className="bg-white rounded-lg shadow-sm p-8"
             >
