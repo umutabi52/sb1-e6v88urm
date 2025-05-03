@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               <a href="#" className="bg-gray-800 hover:bg-blue-600 transition-colors p-2 rounded-full">
                 <Instagram size={20} />
               </a>
-              <a href="mailto:info@reinigungsgenie.de" className="bg-gray-800 hover:bg-blue-600 transition-colors p-2 rounded-full">
+              <a href="mailto:info@reinigungsgenie.com" className="bg-gray-800 hover:bg-blue-600 transition-colors p-2 rounded-full">
                 <Mail size={20} />
               </a>
             </div>
@@ -78,8 +78,8 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@reinigungsgenie.de" className="text-gray-400 hover:text-white transition-colors">
-                  info@reinigungsgenie.de
+                <a href="mailto:info@reinigungsgenie.com" className="text-gray-400 hover:text-white transition-colors">
+                  info@reinigungsgenie.com
                 </a>
               </li>
             </ul>

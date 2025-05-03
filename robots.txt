@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reinigungsgenie.de/sitemap.xml
+Sitemap: https://reinigungsgenie.com/sitemap.xml
