@@ -20,6 +20,12 @@ const Contact: React.FC = () => {
 
   return (
     <>
+      <div className="bg-red-600 text-white px-4 py-3 rounded mb-6 text-center font-semibold shadow">
+        ⚠️ Das Kontaktformular ist zurzeit außer Funktion. <br />
+        Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp:<br />
+        <a href="tel:+4915751527729" className="underline">+49 1575 1527729</a>
+      </div>
+
       <a
         href={`https://wa.me/4915751527729?text=${whatsappMessage}`}
         target="_blank"
@@ -133,6 +139,13 @@ const Contact: React.FC = () => {
                   </button>
                 </div>
               </form>
+
+              {/* Unterer Hinweis-Banner */}
+              <div className="bg-red-600 text-white px-4 py-3 rounded mt-6 text-center font-semibold shadow">
+                ⚠️ Das Kontaktformular ist zurzeit außer Funktion. <br />
+                Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp:<br />
+                <a href="tel:+4915751527729" className="underline">+49 1575 1527729</a>
+              </div>
             </div>
 
             <div className="lg:col-span-2">
