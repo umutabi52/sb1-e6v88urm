@@ -4,48 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <meta name="description" content="ReinigungsGenie bietet professionellen Reinigungsservice, Gebäudereinigung und Büroreinigung in Kiel – zuverlässig, gründlich und zum fairen Preis." />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://reinigungsgenie.com" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="ReinigungsGenie | Professionelle Reinigungsdienstleistungen" />
     <meta property="og:description" content="ReinigungsGenie bietet professionelle Reinigungsdienstleistungen für Privathaushalte und Unternehmen in Kiel und Umgebung." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reinigungsgenie.com" />
-    <link rel="canonical" href="https://reinigungsgenie.com" />
+
     <title>ReinigungsGenie | Professionelle Reinigungsdienstleistungen</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) with consent mode -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16822787899"></script>
+
+    <!-- Google Tag + Analytics (zusammengeführt) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5C26J4R12K"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      
-      // Default consent mode to 'denied'
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied'
-      });
-      
-      gtag('config', 'AW-16822787899');
+      gtag('config', 'G-5C26J4R12K'); // Google Analytics 4
+      gtag('config', 'AW-16822787899'); // Google Ads
     </script>
-    <!-- Event snippet for Lead-Formular senden -->
+
+    <!-- Conversion-Tracking für Leads -->
     <script>
       function gtag_report_conversion(url) {
         var callback = function () {
-          if (typeof(url) != 'undefined') {
+          if (typeof(url) !== 'undefined') {
             window.location = url;
           }
         };
         gtag('event', 'conversion', {
-          'send_to': 'AW-16822787899/6BqYCPW687waELu-3dU-',
-          'event_callback': callback
+          send_to: 'AW-16822787899/6BqYCPW687waELu-3dU-',
+          event_callback: callback
         });
         return false;
       }
     </script>
-    <!-- A little help for the Netlify post-processing bots -->
+
+    <!-- Netlify Form für Build-Erkennung -->
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
