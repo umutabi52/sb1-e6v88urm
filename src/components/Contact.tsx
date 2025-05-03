@@ -30,7 +30,8 @@ const Contact: React.FC = () => {
         href={`https://wa.me/4915751527729?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2"
+       className="fixed bottom-6 right-6 z-[9999] bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2"
+
         aria-label="Contact via WhatsApp"
       >
         <MessageCircle size={24} />
