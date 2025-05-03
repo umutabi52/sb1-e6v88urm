@@ -49,13 +49,22 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
             <div className="lg:col-span-3">
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                className="bg-white rounded-lg shadow-sm p-8"
-              >
+<form
+  name="contact"
+  method="POST"
+  action="/thanks"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  className="bg-white rounded-lg shadow-sm p-8"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p className="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
+  <!-- restliche Felder -->
+
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                   <label>

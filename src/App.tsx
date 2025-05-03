@@ -9,8 +9,8 @@ import Testimonials from './components/Testimonials';
 import PriceCalculator from './components/PriceCalculator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Thanks from './components/Thanks';
 import CookieBanner from './components/CookieBanner';
+import Thanks from '../pages/thanks'; // Korrigierter Import der Thanks-Seite
 
 function App() {
   useEffect(() => {
