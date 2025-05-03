@@ -18,37 +18,6 @@ const Contact: React.FC = () => {
     "Ich freue mich auf Ihre Rückmeldung. Vielen Dank im Voraus!"
   );
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      // Google Conversion Tracking
-      if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
-        window.gtag_report_conversion();
-      }
-
-      // Send form data to Netlify
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      // Redirect to thanks page
-      window.location.href = '/thanks';
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Es gab einen Fehler beim Senden des Formulars. Bitte versuchen Sie es später erneut.');
-    }
-  };
-
   return (
     <>
       <a
@@ -78,10 +47,15 @@ const Contact: React.FC = () => {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                onSubmit={handleSubmit}
+                netlify-honeypot="bot-field"
                 className="bg-white rounded-lg shadow-sm p-8"
               >
                 <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
