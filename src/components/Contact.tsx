@@ -63,7 +63,8 @@ const Contact: React.FC = () => {
       Don’t fill this out if you’re human: <input name="bot-field" />
     </label>
   </p>
-  <!-- restliche Felder -->
+{/* restliche Felder */}
+
 
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
