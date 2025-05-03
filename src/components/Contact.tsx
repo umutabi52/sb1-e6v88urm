@@ -20,18 +20,19 @@ const Contact: React.FC = () => {
 
   return (
     <>
+      {/* Hinweis-Banner oben */}
       <div className="bg-red-600 text-white px-4 py-3 rounded mb-6 text-center font-semibold shadow">
-        ⚠️ Das Kontaktformular ist zurzeit außer Funktion. <br />
-        Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp:<br />
-        <a href="tel:+4915751527729" className="underline">+49 1575 1527729</a>
+        📩⚠️ Es kann aktuell vereinzelt zu Übermittlungsproblemen bei Formularanfragen kommen. <br />
+        Um sicherzugehen, dass Ihre Nachricht bei uns ankommt, kontaktieren Sie uns gerne zusätzlich per <br />
+        <a href="tel:+4915751527729" className="underline">Telefon oder WhatsApp: +49 1575 1527729</a>
       </div>
 
+      {/* WhatsApp Button */}
       <a
         href={`https://wa.me/4915751527729?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-       className="fixed bottom-6 right-6 z-[9999] bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2"
-
+        className="fixed bottom-6 right-6 z-[9999] bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 flex items-center gap-2"
         aria-label="Contact via WhatsApp"
       >
         <MessageCircle size={24} />
@@ -50,27 +51,18 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-6xl mx-auto">
             <div className="lg:col-span-3">
-<form
-  name="contact"
-  method="POST"
-  action="/thanks"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  className="bg-white rounded-lg shadow-sm p-8"
->
-  <input type="hidden" name="form-name" value="contact" />
-  <p className="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field" />
-    </label>
-  </p>
-{/* restliche Felder */}
-
-
+              <form
+                name="contact"
+                method="POST"
+                action="/thanks"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                className="bg-white rounded-lg shadow-sm p-8"
+              >
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                   <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
+                    Don’t fill this out if you're human: <input name="bot-field" />
                   </label>
                 </p>
 
@@ -151,11 +143,11 @@ const Contact: React.FC = () => {
                 </div>
               </form>
 
-              {/* Unterer Hinweis-Banner */}
+              {/* Hinweis-Banner unten */}
               <div className="bg-red-600 text-white px-4 py-3 rounded mt-6 text-center font-semibold shadow">
-                ⚠️ Das Kontaktformular ist zurzeit außer Funktion. <br />
-                Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp:<br />
-                <a href="tel:+4915751527729" className="underline">+49 1575 1527729</a>
+                📩⚠️ Hinweis: In seltenen Fällen kann es zu Übermittlungsproblemen kommen. <br />
+                Um auf Nummer sicher zu gehen, kontaktieren Sie uns gerne zusätzlich per <br />
+                <a href="tel:+4915751527729" className="underline">Telefon oder WhatsApp: +49 1575 1527729</a>
               </div>
             </div>
 
