@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                   <label>
-                    Don’t fill this out if you're human: <input name="bot-field" />
+                    Don't fill this out if you're human: <input name="bot-field" />
                   </label>
                 </p>
 
@@ -184,8 +184,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <p className="font-medium">E-Mail</p>
-                      <a href="mailto:info@reinigungsgenie.de" className="text-blue-600 hover:underline">
-                        info@reinigungsgenie.de
+                      <a href="mailto:info@reinigungsgenie.com" className="text-blue-600 hover:underline">
+                        info@reinigungsgenie.com
                       </a>
                     </div>
                   </div>
